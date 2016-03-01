@@ -1,23 +1,25 @@
 package codility.zeroindexedarray;
 
 class Solution {
-    public int solution(int[] A) {
-        final int size = A.length;
-        long sumMin = (long)A[0];
-        long sumMax = 0;
-        for (int i = 1; i < size; i++) {
-            sumMax += (long)A[i];
+
+    public int solution(int A[]) {
+        int n = A.length;
+        if (n == 0) {
+            return -1;
         }
-        int minDif = (int)Math.abs(sumMax - sumMin);
-        for (int i = 1; i < size; i++) {
-            int dif = (int)Math.abs(sumMax - sumMin);
-            if (dif < minDif) {
-                minDif = dif;
+        long sum = 0;
+        int i;
+        for (i = 0; i < n; i++) sum += (long) A[i];
+        long sum_left = 0;
+        for (i = 0; i < n; i++) {
+            long sum_right = sum - sum_left - (long) A[i];
+            
+            if (sum_left == sum_right) {
+                return i;
             }
-            sumMin += A[i];
-            sumMax -= A[i];
+            sum_left += (long) A[i];
         }
-        return minDif;
+        return -1;
     }
 
 }
