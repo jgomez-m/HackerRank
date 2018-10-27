@@ -1,3 +1,5 @@
+package codility.impliterator;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -72,7 +74,7 @@ class SolutionIter implements Iterable<Integer> {
 /**
  * Example usage:
  *
- * for (Integer x : new SolutionIter(reader)) {
+ * for (Integer x : new codility.impliterator.SolutionIter(reader)) {
  *     System.out.println(x);
  * }
  */
