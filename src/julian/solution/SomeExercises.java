@@ -1,3 +1,4 @@
+package julian.solution;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -14,7 +15,7 @@ import java.util.Map.Entry;
  *
  * @author Julian
  */
-public class DistanciaProm {
+public class SomeExercises {
 
     public double distanciaProm(double[] puntos) {
 
@@ -82,7 +83,7 @@ public class DistanciaProm {
     }
     
     public static void main(String[] args) {
-        DistanciaProm d = new DistanciaProm();
+        SomeExercises d = new SomeExercises();
         System.err.println("La moda es: "+ d.numMasPopular(new int[] {1,3,4,5,4,3,3,4}));
     }
            
