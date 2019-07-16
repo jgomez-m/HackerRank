@@ -1,4 +1,4 @@
-package codility;
+package codility.consecutivearray;
 
 class Solution {
     public int solution(int[] A) {
