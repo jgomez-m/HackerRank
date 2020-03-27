@@ -42,11 +42,12 @@ public class SomeExercises {
             answ = true;
         } else {
             int count = 0;
+            palabra = palabra.replaceAll(" ", "");
+            reverse = new StringBuilder(palabra).reverse();
             for (int i = 0; i < palabra.length(); i++) {
-                reverse = new StringBuilder(palabra).reverse();
                 reverse.replace(i, i + 1, "" + palabra.charAt(palabra.length() - i - 1));
                 count++;
-                if (palabra.equals(reverse.toString())) {
+                if (palabra.equalsIgnoreCase(reverse.toString())) {
                     break;
                 }
             }
@@ -85,6 +86,9 @@ public class SomeExercises {
     public static void main(String[] args) {
         SomeExercises d = new SomeExercises();
         System.err.println("La moda es: "+ d.numMasPopular(new int[] {1,3,4,5,4,3,3,4}));
+        String word = "Anita lava la tina";
+        boolean esPalindrome = d.isCasiPalindromo(word);
+        System.out.println("La palabra "+word + " es Palindrome?: "+esPalindrome);
     }
            
 
