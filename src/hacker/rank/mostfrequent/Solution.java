@@ -23,11 +23,13 @@ public class Solution {
             try {
                 Integer number = Integer.parseInt(elem.trim());
                 numList.add(number);
-                if(mapCount.containsKey(number)){
-                    mapCount.put(number, mapCount.get(number)+1);
-                } else{
-                    mapCount.put(number, 1);
-                }
+                mapCount.computeIfPresent(number, (k,v) -> v+1);
+                mapCount.putIfAbsent(number, 1);
+//                if(mapCount.containsKey(number)){
+//                    mapCount.put(number, mapCount.get(number)+1);
+//                } else{
+//                    mapCount.put(number, 1);
+//                }
             }catch (NumberFormatException e) {
                 //skip
             }
