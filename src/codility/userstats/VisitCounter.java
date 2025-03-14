@@ -5,10 +5,6 @@ import java.util.stream.*;
 
 class VisitCounter {
 
-    private static Object apply(Object t) {
-        return Map.Entry.getKey(t);
-    }
-
     class UserStats {
         private Optional<Long> visitCount;
 
@@ -33,7 +29,7 @@ class VisitCounter {
                     try {
                         Long userId = Long.parseLong(entry.getKey());
                         return entry.getValue() != null && entry.getValue().getVisitCount().isPresent() ?
-                                Map.entry(userId, entry.getValue().getVisitCount().get()) : null;
+                                new AbstractMap.SimpleEntry<>(userId, entry.getValue().getVisitCount().get()) : null;
                     } catch (NumberFormatException ex) {
                         return null;
                     }
